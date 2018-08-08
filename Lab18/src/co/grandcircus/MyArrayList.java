@@ -90,7 +90,7 @@ public class MyArrayList implements MyList {
 	}
 
 	@Override
-	public void removeAt(int index) {
+	public boolean removeAt(int index) {
 		// TODO Auto-generated method stub
 		System.out.println("test " + array[index]);
 		for (int i = index; i > length; i++) {
@@ -99,11 +99,12 @@ public class MyArrayList implements MyList {
 
 			// array[index] = null;
 		}
+		return false;
 
 	}
 
 	@Override
-	public void insertAt(int index, String data) {
+	public boolean insertAt(int index, String data) {
 		// TODO Auto-generated method stub
 
 		if (isFull()) {
@@ -113,6 +114,7 @@ public class MyArrayList implements MyList {
 			array[i] = array[i - 1];
 		}
 		array[index] = data;
+		return false;
 
 	}
 }
